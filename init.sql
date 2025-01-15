@@ -5,14 +5,15 @@ USE soniq_db;
 CREATE TABLE IF NOT EXISTS songs (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    file_path VARCHAR(255) NOT NULL
+    file_path VARCHAR(255) NOT NULL,
+    lyrics TEXT
 );
 
 -- 插入示例歌曲数据
-INSERT INTO songs (title, file_path) VALUES
-('Song 1', 'https://onlinetestcase.com/wp-content/uploads/2023/06/1-MB-MP3.mp3'),
-('Song 2', 'https://onlinetestcase.com/wp-content/uploads/2023/06/2-MB-MP3.mp3'),
-('Song 3', 'https://onlinetestcase.com/wp-content/uploads/2023/06/10-MB-MP3.mp3');
+INSERT INTO songs (title, file_path, lyrics) VALUES
+('Song 1', 'https://onlinetestcase.com/wp-content/uploads/2023/06/1-MB-MP3.mp3', 'This is the lyrics for Song 1\nLine 2\nLine 3'),
+('Song 2', 'https://onlinetestcase.com/wp-content/uploads/2023/06/2-MB-MP3.mp3', 'This is the lyrics for Song 2\nLine 2\nLine 3'),
+('Song 3', 'https://onlinetestcase.com/wp-content/uploads/2023/06/10-MB-MP3.mp3', 'This is the lyrics for Song 3\nLine 2\nLine 3');
 
 -- 创建 daily_song 表来存储每日歌曲
 CREATE TABLE IF NOT EXISTS daily_song (
